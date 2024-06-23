@@ -1,0 +1,22 @@
+/**
+ * Download Form Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.download-form {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 385px;
+    width: 100vw;
+    background-color: theme(colors.brand.beige);
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

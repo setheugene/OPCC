@@ -1,0 +1,69 @@
+/**
+ * Three Column Images Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.three-column-images {
+  .three-column-images__image {
+
+    @screen md {
+      width: 150px;
+    }
+
+    @screen xl {
+      width: 203px;
+    }
+
+    img {
+      transition: all .3s ease-in-out;
+      filter: grayscale(0);
+    }
+
+    .fit-image {
+      transition: all .3s ease-in-out;
+    }
+  }
+  .three-column-images__link-text {
+    display: inline-block;
+    position: relative;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -4px;
+      height: 1px;
+      left: 0;
+      width: 100%;
+      transition: all .3s ease-in-out;
+      background-color: theme(colors.brand.black);
+      opacity: 0;
+    }
+  }
+  .three-column-images__link {
+    width: 100%;
+    margin-bottom: 40px;
+
+    @screen md {
+      width: unset;
+      margin-bottom: 0;
+    }
+    &:hover,
+    &:focus {
+      .three-column-images__image {
+        img {
+          filter: grayscale(100%);
+        }
+        .fit-image {
+          transform: scale(1.05);
+        }
+      }
+      .three-column-images__link-text::after {
+        opacity: 1;
+        bottom: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+    "key": "group_65329ebbe6d3f",
+    "title": "Template : Event Planning Tool",
+    "fields": [
+        {
+            "key": "field_65329ebcef9a8",
+            "label": "Event Planning Form",
+            "name": "event_planning_tool_form_id",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "choices": {
+                "1": "Contact",
+                "4": "Contact Barb",
+                "6": "Event Planning Tool",
+                "2": "Event Registration - Free",
+                "3": "Event Registration - Paid",
+                "5": "Gated Download"
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "templates\/template-event-planning-tool.php"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1697816301
+}

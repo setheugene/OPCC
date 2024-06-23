@@ -1,0 +1,9 @@
+.modal {
+  @apply relative w-full max-w-2xl mx-auto bg-brand-white;
+}
+.mfp-zoom-out-cur .mfp-image-holder {
+  button.mfp-close {
+    width: fit-content;
+    cursor: pointer;
+  }
+}

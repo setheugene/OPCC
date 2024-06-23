@@ -1,0 +1,87 @@
+.js-fade:not(.js-ignore),
+.js-fade-group > *:not(.js-ignore) {
+  opacity: 0;
+  transform: translate3d(0,25px,0);
+  transition: opacity 0.35s ease, transform 1s ease;
+
+  @for $o from 1 through 50 {
+    $delay: calc(#{$o}s / 10);
+
+    &:nth-child( #{$o} ) {
+      transition: opacity 0.35s $delay ease, transform 1s ease;
+    }
+  }
+
+  &.js-animated {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+}
+
+.js-reveal:not(.js-ignore) {
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+
+.js-slide:not(.js-ignore),
+.js-slide-group > *:not(.js-ignore) {
+  opacity: 0;
+  transform: translate3d(0,100px,0);
+
+  &[class*="hdg-"],
+  & > [class*="hdg-"] {
+    transition: none;
+    opacity: 1;
+    transform: none;
+
+    .line-wrap {
+      overflow: hidden;
+    }
+
+    .line {
+      opacity: 1;
+      transform: translate3d(0,100%,0);
+    }
+  }
+
+  &.js-animated {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    transition: all 800ms ease 0s;
+    transition-delay: calc( var(--item-index) * .1s );
+
+    &[class*="hdg-"] {
+      .line {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+        transition: all 800ms ease 0s;
+        transition-delay: calc( var(--item-index) * .1s );
+      }
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .js-fade:not(.js-ignore),
+  .js-fade-group > *:not(.js-ignore) {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+  }
+
+  .js-slide:not(.js-ignore),
+  .js-slide-group > *:not(.js-ignore) {
+    opacity: 1;
+    transform: translate3d(0,0,0);
+    transition: all 800ms ease 0s;
+    transition-delay: calc( var(--item-index) * .1s );
+
+    &[class*="hdg-"] {
+      .line {
+        opacity: 1;
+        transform: translate3d(0,0,0);
+        transition: all 800ms ease 0s;
+        transition-delay: calc( var(--item-index) * .1s );
+      }
+    }
+  }
+}

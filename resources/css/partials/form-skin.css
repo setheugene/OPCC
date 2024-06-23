@@ -1,0 +1,490 @@
+/*
+ * Most of the layout styling is being controlled through editing
+ * the actual markup output of gravity forms. This is happening in
+ * /lib/custom-gravity-forms. Further details are in that file
+ */
+.gform_wrapper.gravity-theme.form-skin_wrapper {
+  .gform_title {
+    @apply hdg-3;
+  }
+
+  .gform_description {
+    @apply block mb-8;
+  }
+}
+
+.gform_wrapper.gravity-theme .form-skin {
+  /*
+  * --form-spacing-cols will effect both the grid column spacing and spacing between complex fields
+  * --form-spacing-rows will effect both the grid row spacing and spacing between complex fields
+  * both variables are currently set to the same defaults as gravity forms and can be changed as neccessary or redefined where neccessary for specific classes and selectors
+  */
+  --form-spacing-cols: theme('spacing.5');
+  --form-spacing-rows: theme('spacing.5');
+  --form-spacing-cols-negative: calc( var(--form-spacing-cols) * -1 );
+  --form-spacing-row-negative: calc( var(--form-spacing-rows) * -1 );
+
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="file"],
+  input[type="url"],
+  select,
+  textarea {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 2px;
+    border: 1px solid theme(colors.brand.gray);
+    background-color: theme(colors.brand.white);
+    color: theme(colors.brand.black);
+    font-weight: theme(fontWeight.semibold);
+
+    &:focus {
+      outline: none;
+      border-color: theme(colors.brand.black);
+      box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+    }
+
+    &::placeholder {
+      @apply text-form-placeholder;
+    }
+  }
+
+  .gfield_error {
+    input[type="email"],
+    input[type="tel"],
+    input[type="text"],
+    input[type="password"],
+    input[type="number"],
+    input[type="file"],
+    input[type="url"],
+    select,
+    textarea {
+      border: 1px solid theme(colors.brand.error);
+
+      &:focus {
+        outline-offset: 5px;
+        outline: 2px solid theme(colors.brand.error);
+        border-radius: 1px;
+      }
+    }
+  }
+
+  /*
+   * unset all default select styles
+   */
+  select {
+    appearance: none;
+
+    &.placeholder-selected {
+      @apply text-form-placeholder;
+    }
+  }
+
+  select::-ms-expand {
+    display: none;
+  }
+
+  .ginput_container_select {
+    position: relative;
+  }
+
+  .select-dropdown-arrow {
+    position: absolute;
+    top: 50%;
+    right: 1em;
+    transform: translateY(-50%);
+    font-size: 1em;
+    z-index: 1;
+  }
+
+  .gfield {
+    textarea,
+    textarea.large {
+      height: 127px;
+      resize: none;
+      @apply py-3;
+    }
+  }
+
+  .gfield_label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: theme(colors.brand.gray);
+  }
+
+  .gfield_description {
+    @apply text-sm mt-1.5 text-form-description;
+  }
+
+  .gfield_checkbox,
+  .gfield_radio {
+    .gchoice:not(:last-child) {
+      @apply mb-1;
+    }
+  }
+
+  /**
+   * extend visuallyhidden rather than display: none to hide the input to
+   * allow the input to still be accessible by screen readers and keyboards
+   * Note: Changes to checkbox input and label will effect .gfield_consent_label
+   * from the consent field
+   */
+  .ginput_container_checkbox input[type="checkbox"] {
+    @apply sr-only;
+
+    ~ label {
+      @apply select-none;
+      position: relative;
+      padding-left: 30px;
+      color: theme(colors.brand.gray);
+      font-weight: theme(fontWeight.semibold);
+
+      &::before {
+        content: '';
+        @apply absolute left-0 border border-current rounded-sm;
+        width: 18px;
+        height: 18px;
+        top: 2px;
+      }
+
+      &:focus ~ label {
+        outline-offset: 3px;
+        outline: 1px solid theme(colors.brand.black);
+        border-radius: 1px;
+      }
+
+      /* .icon {
+        @apply absolute top-0 left-0;
+      }
+
+      .icon-checkbox-checked {
+        @apply hidden;
+      } */
+    }
+    /**
+     * give the focused inputs label a style so keyboard users can tell
+     * which radio / checkbox is focused. Accessibility win
+     */
+    &:focus ~ label {
+      outline-offset: 3px;
+      outline: 1px solid theme(colors.brand.black);
+      border-radius: 1px;
+    }
+  }
+
+  .ll_gfield_type_radio:not(.ll-radio-style--buttons) .ginput_container_radio input[type="radio"] {
+    @apply sr-only;
+
+    ~ label {
+      @apply select-none;
+      padding-left: 30px;
+      position: relative;
+      color: theme(colors.brand.gray);
+      font-weight: theme(fontWeight.semibold);
+
+      &::before {
+        content: '';
+        @apply absolute left-0 rounded-full;
+        border: 1px solid theme(colors.brand.gray);
+        height: 18px;
+        width: 18px;
+        top: 2px;
+      }
+
+      /* .icon {
+        @apply absolute top-0 left-0;
+      }
+
+      .icon-radio-selected {
+        @apply hidden;
+      } */
+    }
+    /**
+     * give the focused inputs label a style so keyboard users can tell
+     * which radio / checkbox is focused. Accessibility win
+     */
+    &:focus ~ label {
+      outline-offset: 3px;
+      outline: 1px solid theme(colors.brand.black);
+      border-radius: 1px;
+    }
+  }
+
+  .ginput_container_checkbox input[type="checkbox"]:checked ~ label {
+    &::after {
+      content: '';
+      @apply absolute;
+      width: 18px;
+      height: 18px;
+      background-image: url('../../assets/img/checkbox.svg');
+      background-repeat: no-repeat;
+      background-size: contain;
+      left: 1px;
+      top: 2px;
+    }
+
+    /* .icon-checkbox {
+      @apply hidden;
+    }
+
+    .icon-checkbox-checked {
+      @apply block;
+    } */
+  }
+
+  .ll_gfield_type_radio:not(.ll-radio-style--buttons) .ginput_container_radio input[type="radio"]:checked ~ label {
+    &::before {
+      border: solid 2px theme(colors.brand.black);
+    }
+
+    &::after {
+      content: '';
+      @apply absolute rounded-full bg-brand-black;
+      height: 8px;
+      width: 8px;
+      top: 7px;
+      left: 5px;
+    }
+
+    /* .icon-radio {
+      @apply hidden;
+    }
+
+    .icon-radio-selected {
+      @apply block;
+    } */
+  }
+
+  .ll-radio-style--buttons .gfield_radio {
+    @apply flex flex-wrap items-stretch justify-start -mx-2 -mb-3;
+
+    .gchoice {
+      @apply px-2 mb-3;
+    }
+
+    .icon {
+      @apply hidden;
+    }
+  }
+
+  .ll-radio-style--buttons .ginput_container_radio input[type="radio"] {
+    @apply sr-only;
+
+    ~ label {
+      @apply inline-block py-3.5 px-8 rounded-lg  text-brand-white duration-150;
+    }
+    /**
+     * give the focused inputs label a style so keyboard users can tell
+     * which radio / checkbox is focused. Accessibility win
+     */
+    &:focus ~ label {
+    }
+  }
+
+  .ll-radio-style--buttons .ginput_container_radio input[type="radio"]:hover,
+  .ll-radio-style--buttons .ginput_container_radio input[type="radio"]:checked {
+    ~ label {
+
+    }
+  }
+
+  .ginput_container_consent {
+    input {
+      @apply sr-only;
+    }
+
+    label {
+      @apply relative flex items-center;
+      padding-left: 84px;
+      min-height: 40px;
+
+      &::before {
+        content: '';
+        width: 72px;
+        height: 40px;
+        @apply absolute top-0 left-0 block duration-150 rounded-full bg-form-toggle-unchecked;
+        box-shadow: inset 0px 0px 11px -6px rgba(0,0,0,0.75);
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        @apply absolute w-8 h-8 duration-150 rounded-full bg-brand-white top-1 left-1;
+        box-shadow: 2px 5.5px 5px -3px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    input:checked ~ label {
+      &::before {
+        @apply bg-form-toggle-checked;
+      }
+
+      &::after {
+        transform: translateX(100%);
+      }
+    }
+  }
+
+  .gform_footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+
+    button[type="submit"] {
+      @extend .btn;
+      padding: 1rem 2rem;
+      border: 1px solid;
+      overflow: hidden;
+      color: theme(colors.brand.black);
+      border-color: theme(colors.brand.black);
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        left: 0;
+        bottom: -100%;
+        display: block;
+        transition: all .3s ease-in-out;
+        background-color: theme(colors.brand.black);
+      }
+
+      &:hover {
+        color: theme(colors.brand.white);
+      }
+
+      &:hover::before {
+        bottom: 0;
+      }
+
+      &:focus {
+        outline-offset: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+        box-sizing: border-box;
+
+        &.black {
+          outline: 1px solid theme(colors.brand.black);
+        }
+        &.white {
+          outline: 1px solid theme(colors.brand.white);
+        }
+      }
+    }
+  }
+
+  .gform_fields {
+    column-gap: var(--form-spacing-cols);
+    row-gap: var(--form-spacing-rows);
+  }
+
+  /*
+   * Extend styling ginput_complex
+   * to act as rows. Make all direct children col's
+   * Note: Possibly unnecessary on future versions of gravity
+   * forms?
+   */
+  .ginput_complex {
+    display: flex;
+    flex-flow: row wrap;
+    margin-left: calc( var(--form-spacing-cols-negative) / 2 );
+    margin-right: calc( var(--form-spacing-cols-negative) / 2 );
+    row-gap: var(--form-spacing-rows);
+
+    & > span,
+    div {
+      flex: 1;
+      padding-left: calc( var(--form-spacing-cols) / 2);
+      padding-right: calc( var(--form-spacing-cols) / 2 );
+
+      &.ginput_full {
+        flex: 0 0 100%;
+      }
+
+      &.ginput_left,
+      &.ginput_right {
+        flex: 0 0 50%;
+      }
+    }
+  }
+  .ginput_container_fileupload {
+    height: 51px;
+    position: relative;
+    margin-bottom: 24px;
+
+    input {
+      height: 51px;
+      padding: 10px 6px 6px 39px;
+      color: theme(colors.brand.gray);
+    }
+
+    &::after {
+      content: "Choose File";
+      position: absolute;
+      height: 39px;
+      width: 135px;
+      left: 6px;
+      top: 6px;
+      background-color: theme(colors.brand.beige);
+      padding: 8px 24px 12px;
+      text-align: center;
+      font-weight: 600;
+      color: theme(colors.brand.black);
+      border: 1px solid theme(colors.brand.black);
+    }
+  }
+}
+
+.gform_wrapper.gravity-theme .form-skin.form-skin--lg {
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="file"],
+  input[type="url"],
+  select,
+  textarea {
+    @apply rounded-lg;
+  }
+}
+
+.gform_wrapper.gravity-theme .form-skin.form-skin--pill {
+  input[type="email"],
+  input[type="tel"],
+  input[type="text"],
+  input[type="password"],
+  input[type="number"],
+  input[type="file"],
+  input[type="url"],
+  select {
+    @apply rounded-full;
+  }
+
+  textarea {
+    @apply rounded-3xl;
+  }
+}
+
+.screen-reader-text,
+.gform_required_legend {
+  @apply sr-only;
+}
+
+/* if you want to hide hidden validation field for anti spam honeypot */
+.gform_validation_container,
+.gform_wrapper .gform_validation_container,
+body .gform_wrapper li.gform_validation_container,
+body .gform_wrapper .gform_body ul.gform_fields li.gfield.gform_validation_container,
+body .gform_wrapper ul.gform_fields li.gfield.gform_validation_container {
+  @apply sr-only;
+}
+
+form.form-skin .gform-body.gform_body .gfield_description.validation_message.gfield_validation_message {
+  color: theme(colors.brand.error);
+}

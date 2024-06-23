@@ -1,0 +1,167 @@
+/**
+ * Content Accordion Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+
+.content-accordion {
+  .content-accordion__item-title {
+    position: relative;
+    cursor: pointer;
+    transition: 0.25s ease-in-out;
+    padding: 10px 0;
+    border-bottom: 1px solid theme(colors.brand.black);
+    color: theme(colors.brand.gray);
+    transition: all .2s;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -8px;
+      width: calc(100% + 16px);
+      height: 100%;
+      border: 1px solid theme(colors.brand.gold);
+      opacity: 0;
+      border-radius: 5px;
+      transition: all .2s;
+    }
+
+    &:focus {
+      outline: none;
+      border: none;
+      &::after {
+        opacity: 1;
+      }
+    }
+
+    .icon {
+      flex: 0 0 auto;
+    }
+
+    .item-title {
+      flex: 1 0 0px;
+      width: 75%;
+
+      @screen sm {
+        width: auto;
+      }
+    }
+
+    .icon-plus {
+      width: 16px;
+    }
+
+    .icon-minus {
+      width: 16px;
+    }
+
+    .icon-chevron-down {
+      width: 35px;
+    }
+
+    &.is-open {
+      color: theme(colors.brand.black);
+      border-color: theme(colors.brand.gold);
+
+      &.is-icon-chevron {
+        .icon-chevron-down {
+          transform: rotate(180deg);
+        }
+      }
+
+      &.is-icon-plus-minus {
+        .icon-plus {
+          @apply hidden;
+        }
+
+        .icon-minus {
+          @apply block;
+        }
+      }
+
+      &.is-icon-plus-cross {
+        .icon-plus {
+          transform: rotate(45deg);
+        }
+      }
+    }
+
+    &:not(.is-open):hover {
+      color: theme(colors.brand.gold);
+      border-color: theme(colors.brand.gold);
+    }
+  }
+
+  .content-accordion__item {
+    transition: 0.15s ease;
+
+    &:last-child {
+      border: none;
+    }
+
+    .content-accordion__item-answer {
+      color: theme(colors.brand.gray);
+      font-size: theme(fontSize.sm);
+      border-bottom: 1px solid theme(colors.brand.gold);
+
+      .wysiwyg {
+        color: theme(colors.brand.gray);
+      }
+
+      &.is-open {
+        @apply block;
+      }
+
+      p:not([class*="hdg-"], [class*="paragraph-"]) {
+        @apply paragraph-default;
+      }
+    }
+
+    .icon-minus {
+      @apply hidden;
+    }
+
+    .icon-plus {
+      @apply block;
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: 0.25s ease-in-out;
+    }
+
+    .icon-chevron-down {
+      transform: rotate(0deg);
+      transform-origin: 50% 50%;
+      transition: 0.25s ease-in-out;
+    }
+  }
+  .content-accordion__cta-image {
+    height: 80px;
+    width: 80px;
+    outline-offset: 8px;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: calc(100% + 16px);
+      width: calc(100% + 16px);
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      position: absolute;
+      border-radius: 100%;
+      border: 1px solid theme(colors.brand.gold);
+      background-color: theme(colors.brand.beige);
+      z-index: -1;
+    }
+
+    .fit-image {
+      border-radius: 100%;
+      overflow: hidden;
+    }
+  }
+}
+

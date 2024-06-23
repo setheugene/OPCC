@@ -1,0 +1,38 @@
+/**
+ * Floor Plans Grid Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.floor-plans-grid {
+  .floor-plan-grid__card a:hover {
+    .floor-plans-grid__card-plus {
+      background-color: theme(colors.brand.gold);
+      svg {
+        color: theme(colors.brand.white);
+      }
+    }
+  }
+  .floor-plans-grid__card-image {
+    img {
+      mix-blend-mode: darken;
+    }
+  }
+  .floor-plans-grid__cta-card {
+    a:hover {
+      border: none;
+      .primary-btn::before {
+        bottom: 0;
+        z-index: 10;
+      }
+      .primary-btn {
+        color: theme(colors.brand.white);
+      }
+    }
+  }
+}
+.floor-plans-grid + .floor-plans-grid {
+  padding-top: 32px;
+}

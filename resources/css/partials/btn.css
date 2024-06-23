@@ -1,0 +1,189 @@
+.btn {
+  display: inline-block;
+  position: relative;
+  font-family: theme(fontFamily.sans);
+  font-weight: theme(fontWeight.semibold);
+  line-height: theme(lineHeight.tight);
+  text-transform: uppercase;
+  letter-spacing: 1.6px;
+}
+
+.primary-btn {
+  @extend .btn;
+  padding: 1rem 2rem;
+  border: 1px solid;
+  overflow: hidden;
+}
+
+.primary-btn span:first-of-type {
+  position: relative;
+  z-index: 10;
+  transition: all .3s ease-in-out;
+}
+
+.primary-btn::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  bottom: -100%;
+  display: block;
+  transition: all .3s ease-in-out;
+}
+
+.primary-btn:hover::before {
+  bottom: 0;
+}
+
+.primary-btn:focus {
+  outline-offset: 5px;
+  box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+  box-sizing: border-box;
+
+  &.black {
+    outline: 1px solid theme(colors.brand.black);
+  }
+  &.white {
+    outline: 1px solid theme(colors.brand.white);
+  }
+}
+
+.primary-btn.black {
+  color: theme(colors.brand.black);
+  border-color: theme(colors.brand.black);
+}
+
+.primary-btn.black:hover {
+  color: theme(colors.brand.white);
+}
+
+.primary-btn.black::before {
+  background-color: theme(colors.brand.black);
+}
+
+.primary-btn.white {
+  color: theme(colors.brand.white);
+  border-color: theme(colors.brand.white);
+}
+
+.primary-btn.white:hover {
+  color: theme(colors.brand.black);
+}
+
+.primary-btn.white::before {
+  background-color: theme(colors.brand.white);
+}
+
+.secondary-btn {
+  @extend .btn;
+}
+
+.secondary-btn.gold {
+  color: theme(colors.brand.gold);
+}
+
+.secondary-btn.gold:focus {
+  outline: 1px solid theme(colors.brand.gold);
+  box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+  border-radius: 2px;
+  outline-offset: 0px;
+}
+
+.secondary-btn.gold:focus::before {
+  opacity: 0;
+}
+
+.secondary-btn.gray {
+  color: theme(colors.brand.gray);
+}
+
+.secondary-btn.gray:focus {
+  outline: 1px solid theme(colors.brand.gray);
+  box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+  border-radius: 2px;
+  outline-offset: 0px;
+}
+
+.secondary-btn.gray:focus::before {
+  opacity: 0;
+}
+
+.secondary-btn.white {
+  color: theme(colors.brand.white);
+}
+
+.secondary-btn.black {
+  color: theme(colors.brand.black);
+}
+
+.secondary-btn.white:focus {
+  outline: 1px solid theme(colors.brand.white);
+  box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+  border-radius: 2px;
+}
+
+.secondary-btn.black:focus {
+  outline: 1px solid theme(colors.brand.black);
+  box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+  border-radius: 2px;
+}
+
+.secondary-btn.gray:focus {
+  outline: 1px solid theme(colors.brand.gray);
+  box-shadow: 0px 0px 10px 0px rgba(43, 43, 43, 0.20);
+  border-radius: 2px;
+}
+
+.secondary-btn::before {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.secondary-btn::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: all .3s ease-in-out;
+}
+
+.secondary-btn.gold::before,
+.secondary-btn.gold::after {
+  background-color: theme(colors.brand.gold);
+}
+
+.secondary-btn.white::before,
+.secondary-btn.white::after {
+  background-color: theme(colors.brand.white);
+}
+
+.secondary-btn.black::before,
+.secondary-btn.black::after {
+  background-color: theme(colors.brand.black);
+}
+
+.secondary-btn.gray::before,
+.secondary-btn.gray::after {
+  background-color: theme(colors.brand.gray);
+}
+
+.secondary-btn:hover::after {
+  opacity: 1;
+  bottom: -4px;
+}
+
+.wysiwyg .btn {
+  @apply mt-5;
+}
+
+.btn-group {
+  @apply grid grid-flow-col gap-5;
+}

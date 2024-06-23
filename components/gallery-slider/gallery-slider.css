@@ -1,0 +1,24 @@
+/**
+ * Gallery Slider Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.gallery-slider {
+  .slick-list {
+    overflow: visible;
+  }
+  .slick-slide {
+    margin: 0 20px 0 0;
+    a {
+      height: 312px;
+      img {
+        width: auto;
+        height: 312px;
+        object-fit: contain;
+      }
+    }
+  }
+}

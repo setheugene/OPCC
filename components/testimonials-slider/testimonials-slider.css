@@ -1,0 +1,102 @@
+/**
+ * Testimonials Slider Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.testimonials-slider {
+  .slick-slide {
+    margin-right: 2rem;
+  }
+  .wysiwyg {
+    p:not([class*="text-brand"]) {
+      color: theme(colors.brand.gray);
+    }
+  }
+  .testimonial-cat-pill {
+    @extend .paragraph-small;
+    color: theme(colors.brand.gray);
+    padding: 6px 14px 4px;
+    margin-right: 10px;
+    border: 1px solid theme(colors.brand.gray);
+    border-radius: 40px;
+    width: fit-content;
+
+    &:last-of-type {
+      margin-right: 0;
+    }
+  }
+}
+.testimonial-cat-pill {
+  @extend .paragraph-small;
+  color: theme(colors.brand.gray);
+  padding: 6px 14px 4px;
+  margin-right: 10px;
+  border: 1px solid theme(colors.brand.gray);
+  border-radius: 40px;
+  width: fit-content;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+}
+.opcc__popup {
+  max-width: 83%;
+  padding: 24px;
+  margin: 24px auto;
+
+  @screen lg {
+    max-width: 77%;
+    padding: 80px 100px;
+    margin: 0 auto;
+    padding: 40px;
+  }
+
+  .wysiwyg {
+    p:not([class*="text-brand"]) {
+      color: theme(colors.brand.gray);
+    }
+  }
+  .mfp-close {
+    @screen lg {
+      top: 32px;
+      right: 32px;
+    }
+  }
+}
+
+.mfp-fade.mfp-bg {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.mfp-fade.mfp-bg.mfp-ready {
+  opacity: 0.8;
+}
+
+.mfp-fade.mfp-bg.mfp-removing {
+  opacity: 0;
+}
+
+.mfp-fade.mfp-wrap .mfp-content {
+  opacity: 0;
+  -webkit-transition: all 0.15s ease-out;
+  -moz-transition: all 0.15s ease-out;
+  transition: all 0.15s ease-out;
+}
+
+.mfp-fade.mfp-wrap.mfp-ready .mfp-content {
+  opacity: 1;
+}
+
+.mfp-fade.mfp-wrap.mfp-removing .mfp-content {
+  opacity: 0;
+}
+
+.mfp-gallery .mfp-content {
+  margin: 100px;
+}

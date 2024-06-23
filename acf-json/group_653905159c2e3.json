@@ -1,0 +1,50 @@
+{
+    "key": "group_653905159c2e3",
+    "title": "Option : FAQs",
+    "fields": [
+        {
+            "key": "field_65390515aeac3",
+            "label": "Archive Page for FAQs",
+            "name": "page_for_faq",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "Once you change this you will need to reset the permalinks at Settings > Permalinks > Save Changes.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "post_type": "",
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "faq-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1698235767
+}

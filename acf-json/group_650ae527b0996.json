@@ -1,0 +1,53 @@
+{
+    "key": "group_650ae527b0996",
+    "title": "Nav : Primary Navigation",
+    "fields": [
+        {
+            "key": "field_650ae5276de11",
+            "label": "Options",
+            "name": "primary_nav_options",
+            "aria-label": "",
+            "type": "select",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "choices": {
+                "none": "Normal",
+                "nav-large-link": "Link style all caps and underlined. For use on grandchild links",
+                "nav-no-children": "Select on Parent menu item if none of it's children have children. Will result in a wider container for the direct children links."
+            },
+            "default_value": false,
+            "return_format": "value",
+            "multiple": 0,
+            "allow_null": 0,
+            "ui": 0,
+            "ajax": 0,
+            "placeholder": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "location\/primary_navigation"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1695213007
+}

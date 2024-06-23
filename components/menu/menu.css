@@ -1,0 +1,26 @@
+/**
+ * Menu Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.menu {
+  .menu-section__image {
+    width: calc(50% - 116px);
+  }
+  .menu__sticky-jump-links {
+    @screen lg {
+      &::before {
+        content: "";
+        top: -150%;
+        right: 0;
+        background-color: theme(colors.brand.white);
+        width: 100%;
+        height: 150%;
+        position: absolute;
+      }
+    }
+  }
+}

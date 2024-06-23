@@ -1,0 +1,62 @@
+/**
+ * Event Space Slider Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.event-space-slider {
+  position: relative;
+  background-color: theme(colors.brand.beige);
+
+  @screen lg {
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: calc(100% + 96px);
+      width: 250px;
+      background-color: theme(colors.brand.white);
+    }
+  }
+  .slick-list,
+  .slick-track {
+    @screen lg {
+      overflow: visible;
+    }
+  }
+  .event-space-slider__slider {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: calc( var(--gutter) * 2 );
+    padding-left: calc( var(--gutter) * 2 );
+
+    @screen sm {
+      max-width: 640px;
+    }
+
+    @screen md {
+      max-width: 768px;
+    }
+
+    @screen lg {
+      padding: 0;
+      margin: 0;
+      max-width: unset;
+    }
+  }
+  .slick-slide {
+    .fit-image {
+      filter: grayscale(100%);
+      transition: all .5s ease-in-out;
+    }
+    &.slick-active {
+      .fit-image {
+        filter: grayscale(0);
+      }
+    }
+  }
+}

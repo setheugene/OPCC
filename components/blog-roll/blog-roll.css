@@ -1,0 +1,21 @@
+/**
+ * Blog Roll Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.blog-roll {
+  .blog-post {
+    @apply block;
+
+    .fit-image {
+      @apply overflow-hidden;
+    }
+
+    &:hover {
+
+    }
+  }
+}

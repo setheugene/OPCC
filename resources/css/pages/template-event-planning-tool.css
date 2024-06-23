@@ -1,0 +1,506 @@
+.page-template-template-event-planning-tool {
+  background-color: theme(colors.brand.white);
+
+  .navbar,
+  .footer {
+    display: none;
+  }
+
+  .gf_progressbar_wrapper {
+    display: none;
+  }
+
+  .event-planning-tool__nav {
+    margin-top: -88px;
+    height: 88px;
+  }
+  .event-planning-tool__body {
+    min-height: calc(100vh - 170px);
+  }
+  form.form-skin .gform-body.gform_body {
+    .ginput_container_name {
+      flex-direction: column;
+
+      span {
+        width: 100%;
+      }
+
+      @screen lg {
+        flex-direction: row;
+
+        span {
+          width: unset;
+        }
+      }
+    }
+    .ll_gfield_type_section {
+      margin-bottom: 24px;
+    }
+    .gform_fields {
+      column-gap: 2rem;
+      row-gap: 24px;
+      display: flex;
+      flex-direction: column;
+
+      @screen lg {
+        display: grid;
+      }
+    }
+    .llgq-final-page .gform_fields {
+      row-gap: 20px;
+      .gsection_description {
+        width: 64%;
+        margin: 0 auto;
+      }
+    }
+    .gfield--type-section.gsection,
+    .gfield.gfield--type-select,
+    .gfield--type-text,
+    .gfield--type-email,
+    .gfield--type-phone,
+    .ll_gfield_type_name {
+      grid-column-start: 4;
+      grid-column-end: 10;
+    }
+    .gfield--type-date.llgq-half-date-picker {
+      grid-column-start: 4;
+      grid-column-end: 7;
+
+      &:last-of-type {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -22px;
+          top: 30px;
+          width: 12px;
+          height: 1px;
+          background-color: theme(colors.brand.black);
+          display: none;
+
+          @screen md {
+            display: block;
+          }
+        }
+      }
+    }
+    .gfield--type-date {
+      grid-column-start: 4;
+      grid-column-end: 10;
+      input {
+        text-transform: uppercase;
+        padding-left: 71px;
+      }
+      .ginput_container.ginput_container_date {
+        position: relative;
+        .ui-datepicker-trigger {
+          position: absolute;
+          top: 12px;
+          left: 20px;
+        }
+      }
+    }
+    .gsection_title {
+      color: theme(colors.brand.black);
+      text-align: center;
+      font-size: 28px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+    }
+    .gsection_description {
+      margin-top: 20px;
+      color: theme(colors.brand.gray);
+      text-align: center;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    .gfield.gfield--type-select.icon-group .ginput_container.ginput_container_select {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        height: 32px;
+        width: 32px;
+        content: "";
+        background-image: url('../../assets/img/icon-group.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      select {
+        padding: 16px 20px 16px 72px;
+      }
+    }
+    .gfield.gfield--type-select.icon-money .ginput_container.ginput_container_select {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        left: 20px;
+        top: 12px;
+        height: 32px;
+        width: 32px;
+        content: "";
+        background-image: url('../../assets/img/icon-money.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+
+      select {
+        padding: 16px 20px 16px 72px;
+      }
+    }
+    .gfield.icon-calendar.gfield--width-half {
+      grid-column-start: 4;
+      grid-column-end: 7;
+
+      &:last-of-type {
+        grid-column-start: 7;
+        grid-column-end: 10;
+        position: relative;
+
+        &::before {
+          content: "";
+          position: absolute;
+          left: -22px;
+          top: 30px;
+          width: 12px;
+          height: 1px;
+          background-color: theme(colors.brand.black);
+          display: none;
+
+          @screen md {
+            display: block;
+          }
+        }
+      }
+    }
+    .gfield.icon-calendar.gfield--width-half {
+      .ginput_container {
+        position: relative;
+        padding: 16px 20px 16px 72px;
+        border: 1px solid theme(colors.brand.gray);
+        border-radius: 2px;
+
+        &::before {
+          position: absolute;
+          left: 20px;
+          top: 12px;
+          height: 32px;
+          width: 32px;
+          content: "";
+          background-image: url('../../assets/img/icon-calendar.svg');
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+        input {
+          border: 0;
+          padding: 0;
+          &:focus {
+            border: none;
+            box-shadow: none;
+          }
+        }
+      }
+    }
+    .ginput_container.ginput_container_select select {
+      @extend .hdg-5;
+      color: theme(colors.brand.gray);
+      font-weight: 400;
+    }
+    .ginput_container.ginput_container_radio {
+      width: 80%;
+      margin: 0 auto;
+      @screen lg {
+        width: unset;
+        margin: unset;
+      }
+      .gfield_radio {
+        display: grid;
+        grid-template-columns: 1fr;
+        column-gap: 2rem;
+        row-gap: 20px;
+        @screen md {
+          grid-template-columns: 2fr 2fr;
+        }
+        @screen lg {
+          grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+
+        .gchoice {
+          label {
+            overflow: hidden;
+            color: theme(colors.brand.filter-border);
+            font-size: 16px;
+            font-weight: 400;
+            padding: 1rem;
+            border: 1px solid theme(colors.brand.black);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+
+            @screen lg {
+              flex-direction: row;
+              align-items: center;
+            }
+
+            svg {
+              height: 24px;
+              width: 24px;
+              margin-bottom: 8px;
+
+              @screen lg {
+                margin-bottom: 0px;
+                margin-right: 12px;
+              }
+            }
+
+            &::before {
+              content: "";
+              position: absolute;
+              height: 100%;
+              width: 100%;
+              top: unset;
+              left: 0;
+              bottom: -100%;
+              display: block;
+              transition: all .3s ease-in-out;
+              border: none;
+              border-radius: 0;
+              background-color: theme(colors.brand.black);
+            }
+
+            &::after {
+              display: none;
+            }
+
+            svg,
+            span {
+              position: relative;
+              z-index: 10;
+              transition: all .3s ease-in-out;
+            }
+
+            svg path {
+              fill: theme(colors.brand.black);
+              transition: all .3s ease-in-out;
+            }
+
+            &:hover {
+              color: theme(colors.brand.white);
+
+              svg path {
+                fill: theme(colors.brand.white);
+              }
+
+              &::before {
+                bottom: 0;
+              }
+              &::after {
+                display: none;
+              }
+            }
+          }
+          input:checked ~ label {
+            color: theme(colors.brand.white);
+
+            svg path {
+              fill: theme(colors.brand.white);
+            }
+
+            &::before {
+              bottom: 0;
+            }
+            &::after {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+
+    .gfield--type-radio:not(.gfield_llgq_visual_choices) {
+      grid-column-start: 4;
+      grid-column-end: 10;
+
+      .gfield_radio {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @screen lg {
+          grid-template-columns: 3fr 3fr 3fr 3fr;
+        }
+
+        .gchoice label {
+          @extend .hdg-5;
+          color: theme(colors.brand.gray);
+          justify-content: center;
+          font-weight: 600;
+        }
+      }
+    }
+    .gfield--type-radio.gf_list_3col {
+      grid-column-start: 4;
+      grid-column-end: 10;
+
+      .gfield_radio {
+        display: grid;
+        grid-template-columns: 1fr;
+
+        @screen lg {
+          grid-template-columns: 4fr 4fr 4fr;
+        }
+      }
+    }
+    .gfield--type-llgq_icon {
+      margin-bottom: -12px;
+      display: flex;
+      justify-content: center;
+      svg.icon {
+        height: 48px;
+        width: 48px;
+        color: theme(colors.brand.gold);
+      }
+
+      & ~ .gfield--type-section {
+        grid-column-start: 5;
+        grid-column-end: 9;
+      }
+    }
+    .gform_page_footer.top_label {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      @screen lg {
+        flex-direction: row;
+      }
+      .gform_previous_button {
+        opacity: 0;
+      }
+      button[type='submit'] {
+        margin: 0px auto 16px;
+
+        @screen lg {
+          margin: 0;
+          position: absolute;
+          z-index: 10;
+          top: 0;
+        }
+      }
+    }
+  }
+  .back-button-wrapper {
+    left: 2rem;
+  }
+  button.llgq-quoter-back:hover {
+    svg {
+      transform: rotate(180deg) translateX(8px);
+    }
+  }
+  .gform_page:first-of-type {
+    /* transition: opacity .3s ease-in;
+    opacity: 0; */
+  }
+  .gravity-theme.ui-datepicker {
+    background-color: theme(colors.brand.white);
+    min-width: 250px;
+    color: theme(colors.brand.black);
+    select {
+      background-color: theme(colors.brand.white);
+    }
+    .ui-datepicker-calendar {
+      margin: 0 auto;
+      min-width: 200px;
+    }
+    a.ui-state-default {
+      line-height: unset;
+      border-radius: 2px;
+    }
+    a.ui-state-active,
+    a.ui-state-active:hover {
+      background-color: theme(colors.brand.gold);
+    }
+  }
+  .event-planning-tool__footer {
+    .llgq-progress {
+      position: relative;
+      transition: all .3s ease-in;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: theme(colors.brand.gold);
+        transition: all .3s ease-in;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: -30px;
+        width: 20px;
+        height: 20px;
+        background-image: url('../../assets/img/checkmark.svg');
+        background-size: contain;
+        background-repeat: no-repeat;
+        transition: all .3s ease-in;
+        opacity: 1;
+        transition: all .3s ease-in;
+      }
+    }
+    /* CURRENT ACTIVE LOOSES AFTER AND GETS BEFORE */
+    .llgq-progress.active {
+      color: theme(colors.brand.gold);
+
+      &::before {
+        width: 100%;
+      }
+
+      &::after {
+        opacity: 0;
+      }
+
+      & ~ .llgq-progress {
+        &::after {
+          opacity: 0;
+        }
+      }
+    }
+    .llgq-progress.active:last-of-type {
+      &::after {
+        opacity: 0;
+      }
+    }
+  }
+  .gform_submission_error {
+    text-align: center;
+  }
+}
+
+.gform_page_footer.top_label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+  .gform_previous_button {
+    width: 0;
+    height: 0;
+    position: absolute;
+  }
+  .gform_ajax_spinner {
+    position: absolute;
+    opacity: 0;
+  }
+}

@@ -1,0 +1,39 @@
+/**
+ * Specialized Testimonial Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.specialized-testimonial {
+  .specialized-testimonial__author-name {
+    padding-left: 24px;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 1px;
+      width: 12px;
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: translateX(-50%);
+      background-color: theme(colors.brand.white);
+    }
+  }
+  .specialized-testimonial__quote {
+    @screen lg {
+      max-width: 569px;
+      left: 399px;
+      top: 306px;
+      right: -498px;
+    }
+  }
+  #specialized-testimonial__arrows-container {
+    @screen lg {
+      bottom: 55px;
+      right: -16px;
+    }
+  }
+}

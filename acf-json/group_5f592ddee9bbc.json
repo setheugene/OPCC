@@ -1,0 +1,51 @@
+{
+    "key": "group_5f592ddee9bbc",
+    "title": "Utility : Background Color",
+    "fields": [
+        {
+            "key": "field_5f592de5bfade",
+            "label": "Background Color",
+            "name": "background_color",
+            "aria-label": "",
+            "type": "button_group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "documentation_notes": "",
+            "choices": {
+                "bg-brand-white": "<div style=\"background-color: #FBFBF7; color: black !important; padding: 8px 12px;\" class=\"flex items-end justify-center border border-brand-grey font-xs\">White<\/div>",
+                "bg-brand-eggplant": "<div style=\"background-color: #1B1C26; color: white !important; padding: 8px 12px;\" class=\"flex items-end justify-center border border-brand-grey font-xs\">Eggplant<\/div>",
+                "bg-brand-plum": "<div style=\"background-color: #2C2F3F; color: white !important; padding: 8px 12px;\" class=\"flex items-end justify-center text-white border border-brand-grey font-xs\">Plum<\/div>",
+                "bg-brand-beige": "<div style=\"background-color: #F3F1EA; color: black !important; padding: 8px 12px;\" class=\"flex items-end justify-center text-white border border-brand-grey font-xs\">Beige<\/div>"
+            },
+            "default_value": "bg-brand-white",
+            "return_format": "value",
+            "allow_null": 0,
+            "layout": "horizontal"
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": false,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1700578373
+}

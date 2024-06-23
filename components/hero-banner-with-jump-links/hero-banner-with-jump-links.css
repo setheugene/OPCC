@@ -1,0 +1,113 @@
+/**
+ * Hero Banner with Jump Links Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.hero-banner-with-jump-links {
+  min-height: calc( 100vh - var(--topOffset) );
+
+  .fit-image::before,
+  .loop-video-container::before {
+    content: "";
+    @apply absolute inset-0 z-10 w-full h-full;
+    background: rgba(23, 24, 27, 0.75);
+  }
+  .loop-video-btn {
+    @apply z-30 duration-300 cursor-pointer text-brand-white;
+    position: relative;
+  }
+
+  .loop-video-toggle-state {
+    .play-loop {
+      @extend .btn;
+      @apply hidden;
+    }
+
+    .pause-loop {
+      @extend .btn;
+      @apply block;
+    }
+
+    &.is-paused {
+      .play-loop {
+        @apply block;
+      }
+
+      .pause-loop {
+        @apply hidden;
+      }
+    }
+  }
+  .hero-banner__jump-link {
+    @extend .btn;
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100%;
+      background-color: theme(colors.brand.white);
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      transition: all .3s ease-in-out;
+      opacity: 0;
+    }
+
+    &:hover::after {
+      @screen lg {
+        opacity: 1;
+        bottom: -4px;
+      }
+    }
+
+    &:focus::after {
+      outline: none;
+    }
+  }
+  .mobile-jumplink-menu-trigger {
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+
+    &.is-open svg {
+      transform: rotate(180deg);
+    }
+  }
+  .jump-link__container {
+    display: none;
+    width: 100%;
+    z-index: 30;
+    margin-top: 20px;
+
+    @screen lg {
+      margin-top: 0;
+      display: block;
+      opacity: 1;
+      position: relative;
+      height: unset;
+      left: unset;
+      bottom: unset;
+      transform: unset;
+    }
+
+    &.is-open {
+      height: 100%;
+      opacity: 1;
+    }
+  }
+}
+.hero-banner-with-jump-links + section {
+  @screen lg {
+    margin-top: calc(50vh * -1);
+    left: 0;
+    height: 100%;
+    width: 100%;
+  }
+}

@@ -1,0 +1,64 @@
+/**
+ * Awards Callout Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.awards-callout {
+  .awards-callout__watermark {
+    width: 312px;
+    height: 312px;
+    flex-shrink: 0;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+  }
+  .count-1,
+  .count-2,
+  .count-3 {
+    .awards-callout_callout-column {
+      width: 250px;
+
+      @screen xl {
+        width: 269px;
+      }
+    }
+  }
+  .count-4 {
+    .awards-callout_callout-column {
+      width: 231px;
+
+      @screen lg {
+        width: 175px;
+      }
+
+      @screen xl {
+        width: 231px;
+      }
+
+      &:first-of-type {
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        padding-right: 0;
+      }
+    }
+  }
+  .awards-callout__divider {
+    width: 100%;
+    height: 1px;
+    background-color: theme(colors.brand.plum);
+    margin: 41px 0;
+    max-width: 275px;
+
+    @screen lg {
+      width: 1px;
+      height: 80px;
+      margin: 0 41px;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+/**
+ * Scrolling Cards Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.scrolling-cards {
+  #scrolling-cards__pin {
+    padding: 20px;
+    /* border: 1px solid theme(colors.brand.gold); */
+    text-align: center;
+    @screen md {
+      padding: 48px 64px;
+    }
+    @screen lg {
+      padding: 136px 200px;
+    }
+  }
+  .scrolling-cards__card {
+    a {
+      cursor: pointer;
+    }
+    .fit-image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(0deg, rgba(29, 29, 29, 0.65) 0%, rgba(29, 29, 29, 0.65) 100%);
+    }
+    .fit-image {
+      transition: all .3s ease-out;
+    }
+    &:hover a {
+      .fit-image {
+        transform: scale(1.1);
+      }
+      .secondary-btn::after {
+        opacity: 1;
+        bottom: -4px;
+      }
+    }
+  }
+}

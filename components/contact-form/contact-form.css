@@ -1,0 +1,13 @@
+/**
+ * Contact Form Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.contact-form {
+  .contact-form__contact-info-link:hover {
+    text-decoration: none;
+  }
+}

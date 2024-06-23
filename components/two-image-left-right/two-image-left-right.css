@@ -1,0 +1,63 @@
+/**
+ * Two Image Left Right Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.two-image-left-right {
+  .two-image-left-right__large-image > .fit-image::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    inset: 0;
+    position: absolute;
+    background: linear-gradient(0deg, rgba(23, 24, 27, 0.25) 0%, rgba(23, 24, 27, 0.25) 100%);
+  }
+  .two-image-left-right__small-image {
+    width: 113px;
+    height: 113px;
+    position: absolute;
+    bottom: 56px;
+
+    @screen lg {
+      width: 180px;
+      height: 180px;
+    }
+    &.content-image {
+      left: -75px;
+
+      @screen lg {
+        left: -100px;
+      }
+    }
+    &.image-content {
+      left: -75px;
+      right: unset;
+
+      @screen lg {
+        left: unset;
+        right: -100px;
+      }
+    }
+  }
+  .two-image-left-right__border-wrapper {
+    width: calc(100% + 40px);
+    height: calc(100% - 64px);
+    left: -20px;
+
+    @screen lg {
+      height: 100%;
+      width: 100%;
+      left: 0;
+    }
+  }
+  .two-image-left-right__border-width {
+    width: 100%;
+
+    @screen lg {
+      width: 91.66666%;
+    }
+  }
+}

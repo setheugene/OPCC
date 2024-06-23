@@ -1,0 +1,44 @@
+/**
+ * Hero Banner Styles
+ * ----------------------------------------------------------------------------
+ *
+ * About the module
+ *
+ */
+
+.hero-banner {
+  min-height: calc( 100dvh - var(--topOffset) );
+
+  .fit-image::before,
+  .loop-video-container::before {
+    content: "";
+    @apply absolute inset-0 z-10 w-full h-full;
+    background: rgba(23, 24, 27, 0.75);
+  }
+
+  .loop-video-btn {
+    @apply z-30 duration-300 cursor-pointer text-brand-white;
+    position: relative;
+  }
+  .loop-video-toggle-state {
+    .play-loop {
+      @extend .btn;
+      @apply hidden;
+    }
+
+    .pause-loop {
+      @extend .btn;
+      @apply block;
+    }
+
+    &.is-paused {
+      .play-loop {
+        @apply block;
+      }
+
+      .pause-loop {
+        @apply hidden;
+      }
+    }
+  }
+}

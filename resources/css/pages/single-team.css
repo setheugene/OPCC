@@ -1,0 +1,84 @@
+.single-team-page {
+  .single-team__left-column {
+    padding-bottom: 80px;
+    @screen lg {
+      padding-bottom: 127px;
+    }
+  }
+  .single-team__back-btn {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: theme(colors.brand.gray);
+      left: 0;
+      bottom: -4px;
+      opacity: 0;
+      content: "";
+      transition: all .2s;
+    }
+
+    &:hover::after {
+      opacity: 1;
+      bottom: 0;
+    }
+  }
+  .single-team__headshot {
+    &::before {
+      content: "";
+      height: 100%;
+      width: 85vw;
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      margin-left: -50vw;
+      left: 50%;
+      background-image: url('../../assets/img/ripples-beige.svg');
+      background-repeat: repeat;
+      background-size: contain;
+    }
+  }
+  .team__right-column {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: var(--gutter);
+      height: 100%;
+      width: 115%;
+      background-color: theme(colors.brand.beige);
+      display: none;
+      @screen lg {
+        display: block;
+      }
+    }
+  }
+  .sticky-card {
+    min-height: 628px;
+    &::after {
+      position: absolute;
+      content: "";
+      right: -100%;
+      top: 0;
+      background-color: theme(colors.brand.beige);
+      height: 100%;
+      width: 100%;
+      display: none;
+      @screen lg {
+        display: block;
+      }
+    }
+  }
+  .single-team__form-column {
+    width: 100%;
+    margin: 0 auto;
+
+    @screen lg {
+      width: 85%;
+    }
+  }
+}
